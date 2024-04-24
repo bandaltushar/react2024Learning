@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 import About from './pages/about';
 import Header from './components/Header';
+import HotelDetails from './pages/HotelDetails';
 
 const AppLayout = () => {
   return (<>
@@ -26,6 +27,10 @@ const appRoute = createBrowserRouter([
       {
         path: "/about",
         element: <About />
+      },
+      {
+        path: "/hotel-details/:resId",
+        element: <HotelDetails />
       }
     ]
   },

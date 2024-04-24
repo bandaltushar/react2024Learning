@@ -11,7 +11,7 @@ const ResCard = (props) => {
         location
     } = resData?.info
     return (
-        <div className="col-4 mt-3" >
+        <>
             <div className="border rounded ">
                 <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} height={200} className="w-100" />
                 <div className="p-3">
@@ -24,7 +24,7 @@ const ResCard = (props) => {
                 </div>
                 
             </div>
-        </div>
+        </>
 
     )
 }

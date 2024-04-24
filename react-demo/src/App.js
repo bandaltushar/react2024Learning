@@ -6,10 +6,11 @@ import Header from "./components/Header"
 import ResCard from './components/ResCard';
 import restaurantData from "./utils/data"
 import About from './pages/about';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [resList, setResList] = useState([]);
-  const [filtedList, setFilterdList] = useState([]);
+  const [filtedList, setFilterdList] = useState(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [searchText, setSearchText] = useState();
   
@@ -41,7 +42,7 @@ function App() {
       fetchData();
     }
 };
-
+if (filtedList === null) return <>Loading</>
   return (
     // <div className="app" onScroll={(handleScroll)} style={{ height: "900px", overflowY: "scroll" }} >
     <div className="app" onScroll={(handleScroll)}>
@@ -89,7 +90,7 @@ function App() {
         <div className="row" >
           
         {filtedList.map((item) => {
-          return <ResCard key={item.info.id} resData={item} />
+          return <Link key={item.info.id} to={'/hotel-details/' + item.info.id } className="col-4 mt-3"  ><ResCard  resData={item} /></Link>
         })}
         </div>
       </div>
